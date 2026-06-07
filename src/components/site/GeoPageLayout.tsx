@@ -16,21 +16,33 @@ const SERVICES = [
   { name: "Тротуарная плитка", price: "от 1 350 ₽/м²" },
 ];
 
-
 function useGeoSchema(city: string, cityGenitive: string) {
+  const breadcrumbName = `Асфальтирование в ${cityGenitive}`;
+  const businessName = `МСК АСФАЛЬТ — асфальтирование в ${cityGenitive}`;
+
   return JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://mskasfalt.ru/" },
-          { "@type": "ListItem", "position": 2, "name": \`Асфальтирование в \${cityGenitive}\`, "item": typeof window !== "undefined" ? window.location.href : "https://mskasfalt.ru/" }
+          { 
+            "@type": "ListItem", 
+            "position": 1, 
+            "name": "Главная", 
+            "item": "https://mskasfalt.ru/" 
+          },
+          { 
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": breadcrumbName, 
+            "item": typeof window !== "undefined" ? window.location.href : "https://mskasfalt.ru/" 
+          }
         ]
       },
       {
         "@type": "LocalBusiness",
-        "name": \`МСК АСФАЛЬТ — асфальтирование в \${cityGenitive}\`,
+        "name": businessName,
         "@id": "https://mskasfalt.ru/#org",
         "url": "https://mskasfalt.ru/",
         "telephone": "+79138263070",
@@ -42,8 +54,8 @@ function useGeoSchema(city: string, cityGenitive: string) {
 
 export interface GeoPageProps {
   city: string;
-  cityGenitive: string; // "Балашихи", "Химок"
-  distance: string; // "15 км от МКАД"
+  cityGenitive: string;
+  distance: string;
   description: string;
   seoText: string;
 }

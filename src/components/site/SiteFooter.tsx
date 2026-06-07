@@ -39,8 +39,8 @@ export function SiteFooter() {
             <div className="text-xs uppercase tracking-wider opacity-60">Компания</div>
             <div className="mt-3 text-sm opacity-80">{c.company}</div>
             <div className="text-sm opacity-80">ИНН {c.inn}</div>
-            <Link to="/privacy" className="mt-3 inline-block text-sm opacity-60 hover:opacity-100">
-              Политика конфиденциальности
+            <Link to="/admin" className="mt-3 inline-block text-sm opacity-60 hover:opacity-100">
+              Админ-панель
             </Link>
           </div>
         </div>

@@ -1,21 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { useCms } from "@/store/cms";
-import { Link } from "@tanstack/react-router";
-
-// Districts that have dedicated geo pages
-const GEO_SLUGS: Record<string, string> = {
-  "Балашиха": "/asfaltirovanie/balashiha",
-  "Химки": "/asfaltirovanie/himki",
-  "Мытищи": "/asfaltirovanie/mytishchi",
-  "Королёв": "/asfaltirovanie/korolev",
-  "Подольск": "/asfaltirovanie/podolsk",
-  "Люберцы": "/asfaltirovanie/lyubertsy",
-  "Красногорск": "/asfaltirovanie/krasnogorsk",
-  "Одинцово": "/asfaltirovanie/odintsovo",
-  "Домодедово": "/asfaltirovanie/domodedovo",
-  "Истра": "/asfaltirovanie/istra",
-};
 
 export function Geography() {
   const districts = useCms((s) => s.districts);
@@ -35,40 +20,19 @@ export function Geography() {
 
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {districts.map((d, i) => {
-                const slug = GEO_SLUGS[d.name];
-                const inner = (
-                  <>
-                    <MapPin className="size-4 text-primary flex-shrink-0" />
-                    <span className="truncate">{d.name}</span>
-                    {slug && (
-                      <span className="ml-auto text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                    )}
-                  </>
-                );
-                return (
-                  <motion.div
-                    key={d.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: (i % 6) * 0.04 }}
-                  >
-                    {slug ? (
-                      <Link
-                        to={slug as any}
-                        className="group rounded-2xl bg-card border border-border shadow-card px-4 py-3 flex items-center gap-2 text-sm font-semibold text-foreground hover:border-primary/50 hover:shadow-glow-green transition-all"
-                      >
-                        {inner}
-                      </Link>
-                    ) : (
-                      <div className="rounded-2xl bg-card border border-border shadow-card px-4 py-3 flex items-center gap-2 text-sm font-semibold text-foreground">
-                        {inner}
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              })}
+              {districts.map((d, i) => (
+                <motion.div
+                  key={d.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: (i % 6) * 0.04 }}
+                  className="rounded-2xl bg-card border border-border shadow-card px-4 py-3 flex items-center gap-2 text-sm font-semibold text-foreground"
+                >
+                  <MapPin className="size-4 text-primary flex-shrink-0" />
+                  <span className="truncate">{d.name}</span>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

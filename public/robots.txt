@@ -2,11 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-# Яндекс
-User-agent: Yandex
-Allow: /
-Disallow: /admin
-Crawl-delay: 1
-
-Sitemap: https://mskasfalt.ru/sitemap.xml
-Turbo: https://mskasfalt.ru/turbo.xml
+Sitemap: https://msk-asphalt-glow.lovable.app/sitemap.xml

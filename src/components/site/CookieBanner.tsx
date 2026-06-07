@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cookie } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 
 const KEY = "cookie-ack-v1";
 
@@ -31,11 +30,8 @@ export function CookieBanner() {
                 <Cookie className="size-5" />
               </div>
               <p className="text-sm text-foreground/80">
-                Мы используем cookies для корректной работы сайта и аналитики. Продолжая, вы соглашаетесь с{" "}
-                <Link to="/privacy" className="underline hover:text-foreground">
-                  политикой конфиденциальности
-                </Link>
-                .
+                Мы используем cookies для корректной работы сайта и улучшения сервиса. Продолжая, вы соглашаетесь с
+                нашей политикой.
               </p>
             </div>
             <button

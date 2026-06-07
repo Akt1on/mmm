@@ -9,40 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as AdminRouteImport } from './routes/admin'
-import { Route as R404RouteImport } from './routes/404'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as UslugiYamochnyyRemontRouteImport } from './routes/uslugi/yamochnyy-remont'
-import { Route as UslugiTrotuarnayaPlitkaRouteImport } from './routes/uslugi/trotuarnaya-plitka'
-import { Route as UslugiAsfaltirovaniyeSntRouteImport } from './routes/uslugi/asfaltirovaniye-snt'
-import { Route as UslugiAsfaltirovaniyeParkovokRouteImport } from './routes/uslugi/asfaltirovaniye-parkovok'
-import { Route as UslugiAsfaltirovaniyeDvorovRouteImport } from './routes/uslugi/asfaltirovaniye-dvorov'
-import { Route as UslugiAsfaltirovaniyeDorogRouteImport } from './routes/uslugi/asfaltirovaniye-dorog'
-import { Route as AsfaltirovaniePodolskRouteImport } from './routes/asfaltirovanie/podolsk'
-import { Route as AsfaltirovanieOdintsovoRouteImport } from './routes/asfaltirovanie/odintsovo'
-import { Route as AsfaltirovanieMytishchiRouteImport } from './routes/asfaltirovanie/mytishchi'
-import { Route as AsfaltirovanieLyubertsyRouteImport } from './routes/asfaltirovanie/lyubertsy'
-import { Route as AsfaltirovanieKrasnogorskRouteImport } from './routes/asfaltirovanie/krasnogorsk'
-import { Route as AsfaltirovanieKorolevRouteImport } from './routes/asfaltirovanie/korolev'
-import { Route as AsfaltirovanieIstraRouteImport } from './routes/asfaltirovanie/istra'
-import { Route as AsfaltirovanieHimkiRouteImport } from './routes/asfaltirovanie/himki'
-import { Route as AsfaltirovanieDomodedovoRouteImport } from './routes/asfaltirovanie/domodedovo'
-import { Route as AsfaltirovanieBalashihaRouteImport } from './routes/asfaltirovanie/balashiha'
 
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R404Route = R404RouteImport.update({
-  id: '/404',
-  path: '/404',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -50,273 +22,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const UslugiYamochnyyRemontRoute = UslugiYamochnyyRemontRouteImport.update({
-  id: '/uslugi/yamochnyy-remont',
-  path: '/uslugi/yamochnyy-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UslugiTrotuarnayaPlitkaRoute = UslugiTrotuarnayaPlitkaRouteImport.update({
-  id: '/uslugi/trotuarnaya-plitka',
-  path: '/uslugi/trotuarnaya-plitka',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UslugiAsfaltirovaniyeSntRoute =
-  UslugiAsfaltirovaniyeSntRouteImport.update({
-    id: '/uslugi/asfaltirovaniye-snt',
-    path: '/uslugi/asfaltirovaniye-snt',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const UslugiAsfaltirovaniyeParkovokRoute =
-  UslugiAsfaltirovaniyeParkovokRouteImport.update({
-    id: '/uslugi/asfaltirovaniye-parkovok',
-    path: '/uslugi/asfaltirovaniye-parkovok',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const UslugiAsfaltirovaniyeDvorovRoute =
-  UslugiAsfaltirovaniyeDvorovRouteImport.update({
-    id: '/uslugi/asfaltirovaniye-dvorov',
-    path: '/uslugi/asfaltirovaniye-dvorov',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const UslugiAsfaltirovaniyeDorogRoute =
-  UslugiAsfaltirovaniyeDorogRouteImport.update({
-    id: '/uslugi/asfaltirovaniye-dorog',
-    path: '/uslugi/asfaltirovaniye-dorog',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AsfaltirovaniePodolskRoute = AsfaltirovaniePodolskRouteImport.update({
-  id: '/asfaltirovanie/podolsk',
-  path: '/asfaltirovanie/podolsk',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsfaltirovanieOdintsovoRoute = AsfaltirovanieOdintsovoRouteImport.update({
-  id: '/asfaltirovanie/odintsovo',
-  path: '/asfaltirovanie/odintsovo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsfaltirovanieMytishchiRoute = AsfaltirovanieMytishchiRouteImport.update({
-  id: '/asfaltirovanie/mytishchi',
-  path: '/asfaltirovanie/mytishchi',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsfaltirovanieLyubertsyRoute = AsfaltirovanieLyubertsyRouteImport.update({
-  id: '/asfaltirovanie/lyubertsy',
-  path: '/asfaltirovanie/lyubertsy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsfaltirovanieKrasnogorskRoute =
-  AsfaltirovanieKrasnogorskRouteImport.update({
-    id: '/asfaltirovanie/krasnogorsk',
-    path: '/asfaltirovanie/krasnogorsk',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AsfaltirovanieKorolevRoute = AsfaltirovanieKorolevRouteImport.update({
-  id: '/asfaltirovanie/korolev',
-  path: '/asfaltirovanie/korolev',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsfaltirovanieIstraRoute = AsfaltirovanieIstraRouteImport.update({
-  id: '/asfaltirovanie/istra',
-  path: '/asfaltirovanie/istra',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsfaltirovanieHimkiRoute = AsfaltirovanieHimkiRouteImport.update({
-  id: '/asfaltirovanie/himki',
-  path: '/asfaltirovanie/himki',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AsfaltirovanieDomodedovoRoute =
-  AsfaltirovanieDomodedovoRouteImport.update({
-    id: '/asfaltirovanie/domodedovo',
-    path: '/asfaltirovanie/domodedovo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AsfaltirovanieBalashihaRoute = AsfaltirovanieBalashihaRouteImport.update({
-  id: '/asfaltirovanie/balashiha',
-  path: '/asfaltirovanie/balashiha',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/404': typeof R404Route
   '/admin': typeof AdminRoute
-  '/privacy': typeof PrivacyRoute
-  '/asfaltirovanie/balashiha': typeof AsfaltirovanieBalashihaRoute
-  '/asfaltirovanie/domodedovo': typeof AsfaltirovanieDomodedovoRoute
-  '/asfaltirovanie/himki': typeof AsfaltirovanieHimkiRoute
-  '/asfaltirovanie/istra': typeof AsfaltirovanieIstraRoute
-  '/asfaltirovanie/korolev': typeof AsfaltirovanieKorolevRoute
-  '/asfaltirovanie/krasnogorsk': typeof AsfaltirovanieKrasnogorskRoute
-  '/asfaltirovanie/lyubertsy': typeof AsfaltirovanieLyubertsyRoute
-  '/asfaltirovanie/mytishchi': typeof AsfaltirovanieMytishchiRoute
-  '/asfaltirovanie/odintsovo': typeof AsfaltirovanieOdintsovoRoute
-  '/asfaltirovanie/podolsk': typeof AsfaltirovaniePodolskRoute
-  '/uslugi/asfaltirovaniye-dorog': typeof UslugiAsfaltirovaniyeDorogRoute
-  '/uslugi/asfaltirovaniye-dvorov': typeof UslugiAsfaltirovaniyeDvorovRoute
-  '/uslugi/asfaltirovaniye-parkovok': typeof UslugiAsfaltirovaniyeParkovokRoute
-  '/uslugi/asfaltirovaniye-snt': typeof UslugiAsfaltirovaniyeSntRoute
-  '/uslugi/trotuarnaya-plitka': typeof UslugiTrotuarnayaPlitkaRoute
-  '/uslugi/yamochnyy-remont': typeof UslugiYamochnyyRemontRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/404': typeof R404Route
   '/admin': typeof AdminRoute
-  '/privacy': typeof PrivacyRoute
-  '/asfaltirovanie/balashiha': typeof AsfaltirovanieBalashihaRoute
-  '/asfaltirovanie/domodedovo': typeof AsfaltirovanieDomodedovoRoute
-  '/asfaltirovanie/himki': typeof AsfaltirovanieHimkiRoute
-  '/asfaltirovanie/istra': typeof AsfaltirovanieIstraRoute
-  '/asfaltirovanie/korolev': typeof AsfaltirovanieKorolevRoute
-  '/asfaltirovanie/krasnogorsk': typeof AsfaltirovanieKrasnogorskRoute
-  '/asfaltirovanie/lyubertsy': typeof AsfaltirovanieLyubertsyRoute
-  '/asfaltirovanie/mytishchi': typeof AsfaltirovanieMytishchiRoute
-  '/asfaltirovanie/odintsovo': typeof AsfaltirovanieOdintsovoRoute
-  '/asfaltirovanie/podolsk': typeof AsfaltirovaniePodolskRoute
-  '/uslugi/asfaltirovaniye-dorog': typeof UslugiAsfaltirovaniyeDorogRoute
-  '/uslugi/asfaltirovaniye-dvorov': typeof UslugiAsfaltirovaniyeDvorovRoute
-  '/uslugi/asfaltirovaniye-parkovok': typeof UslugiAsfaltirovaniyeParkovokRoute
-  '/uslugi/asfaltirovaniye-snt': typeof UslugiAsfaltirovaniyeSntRoute
-  '/uslugi/trotuarnaya-plitka': typeof UslugiTrotuarnayaPlitkaRoute
-  '/uslugi/yamochnyy-remont': typeof UslugiYamochnyyRemontRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/404': typeof R404Route
   '/admin': typeof AdminRoute
-  '/privacy': typeof PrivacyRoute
-  '/asfaltirovanie/balashiha': typeof AsfaltirovanieBalashihaRoute
-  '/asfaltirovanie/domodedovo': typeof AsfaltirovanieDomodedovoRoute
-  '/asfaltirovanie/himki': typeof AsfaltirovanieHimkiRoute
-  '/asfaltirovanie/istra': typeof AsfaltirovanieIstraRoute
-  '/asfaltirovanie/korolev': typeof AsfaltirovanieKorolevRoute
-  '/asfaltirovanie/krasnogorsk': typeof AsfaltirovanieKrasnogorskRoute
-  '/asfaltirovanie/lyubertsy': typeof AsfaltirovanieLyubertsyRoute
-  '/asfaltirovanie/mytishchi': typeof AsfaltirovanieMytishchiRoute
-  '/asfaltirovanie/odintsovo': typeof AsfaltirovanieOdintsovoRoute
-  '/asfaltirovanie/podolsk': typeof AsfaltirovaniePodolskRoute
-  '/uslugi/asfaltirovaniye-dorog': typeof UslugiAsfaltirovaniyeDorogRoute
-  '/uslugi/asfaltirovaniye-dvorov': typeof UslugiAsfaltirovaniyeDvorovRoute
-  '/uslugi/asfaltirovaniye-parkovok': typeof UslugiAsfaltirovaniyeParkovokRoute
-  '/uslugi/asfaltirovaniye-snt': typeof UslugiAsfaltirovaniyeSntRoute
-  '/uslugi/trotuarnaya-plitka': typeof UslugiTrotuarnayaPlitkaRoute
-  '/uslugi/yamochnyy-remont': typeof UslugiYamochnyyRemontRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/404'
-    | '/admin'
-    | '/privacy'
-    | '/asfaltirovanie/balashiha'
-    | '/asfaltirovanie/domodedovo'
-    | '/asfaltirovanie/himki'
-    | '/asfaltirovanie/istra'
-    | '/asfaltirovanie/korolev'
-    | '/asfaltirovanie/krasnogorsk'
-    | '/asfaltirovanie/lyubertsy'
-    | '/asfaltirovanie/mytishchi'
-    | '/asfaltirovanie/odintsovo'
-    | '/asfaltirovanie/podolsk'
-    | '/uslugi/asfaltirovaniye-dorog'
-    | '/uslugi/asfaltirovaniye-dvorov'
-    | '/uslugi/asfaltirovaniye-parkovok'
-    | '/uslugi/asfaltirovaniye-snt'
-    | '/uslugi/trotuarnaya-plitka'
-    | '/uslugi/yamochnyy-remont'
+  fullPaths: '/' | '/admin'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/404'
-    | '/admin'
-    | '/privacy'
-    | '/asfaltirovanie/balashiha'
-    | '/asfaltirovanie/domodedovo'
-    | '/asfaltirovanie/himki'
-    | '/asfaltirovanie/istra'
-    | '/asfaltirovanie/korolev'
-    | '/asfaltirovanie/krasnogorsk'
-    | '/asfaltirovanie/lyubertsy'
-    | '/asfaltirovanie/mytishchi'
-    | '/asfaltirovanie/odintsovo'
-    | '/asfaltirovanie/podolsk'
-    | '/uslugi/asfaltirovaniye-dorog'
-    | '/uslugi/asfaltirovaniye-dvorov'
-    | '/uslugi/asfaltirovaniye-parkovok'
-    | '/uslugi/asfaltirovaniye-snt'
-    | '/uslugi/trotuarnaya-plitka'
-    | '/uslugi/yamochnyy-remont'
-  id:
-    | '__root__'
-    | '/'
-    | '/404'
-    | '/admin'
-    | '/privacy'
-    | '/asfaltirovanie/balashiha'
-    | '/asfaltirovanie/domodedovo'
-    | '/asfaltirovanie/himki'
-    | '/asfaltirovanie/istra'
-    | '/asfaltirovanie/korolev'
-    | '/asfaltirovanie/krasnogorsk'
-    | '/asfaltirovanie/lyubertsy'
-    | '/asfaltirovanie/mytishchi'
-    | '/asfaltirovanie/odintsovo'
-    | '/asfaltirovanie/podolsk'
-    | '/uslugi/asfaltirovaniye-dorog'
-    | '/uslugi/asfaltirovaniye-dvorov'
-    | '/uslugi/asfaltirovaniye-parkovok'
-    | '/uslugi/asfaltirovaniye-snt'
-    | '/uslugi/trotuarnaya-plitka'
-    | '/uslugi/yamochnyy-remont'
+  to: '/' | '/admin'
+  id: '__root__' | '/' | '/admin'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  R404Route: typeof R404Route
   AdminRoute: typeof AdminRoute
-  PrivacyRoute: typeof PrivacyRoute
-  AsfaltirovanieBalashihaRoute: typeof AsfaltirovanieBalashihaRoute
-  AsfaltirovanieDomodedovoRoute: typeof AsfaltirovanieDomodedovoRoute
-  AsfaltirovanieHimkiRoute: typeof AsfaltirovanieHimkiRoute
-  AsfaltirovanieIstraRoute: typeof AsfaltirovanieIstraRoute
-  AsfaltirovanieKorolevRoute: typeof AsfaltirovanieKorolevRoute
-  AsfaltirovanieKrasnogorskRoute: typeof AsfaltirovanieKrasnogorskRoute
-  AsfaltirovanieLyubertsyRoute: typeof AsfaltirovanieLyubertsyRoute
-  AsfaltirovanieMytishchiRoute: typeof AsfaltirovanieMytishchiRoute
-  AsfaltirovanieOdintsovoRoute: typeof AsfaltirovanieOdintsovoRoute
-  AsfaltirovaniePodolskRoute: typeof AsfaltirovaniePodolskRoute
-  UslugiAsfaltirovaniyeDorogRoute: typeof UslugiAsfaltirovaniyeDorogRoute
-  UslugiAsfaltirovaniyeDvorovRoute: typeof UslugiAsfaltirovaniyeDvorovRoute
-  UslugiAsfaltirovaniyeParkovokRoute: typeof UslugiAsfaltirovaniyeParkovokRoute
-  UslugiAsfaltirovaniyeSntRoute: typeof UslugiAsfaltirovaniyeSntRoute
-  UslugiTrotuarnayaPlitkaRoute: typeof UslugiTrotuarnayaPlitkaRoute
-  UslugiYamochnyyRemontRoute: typeof UslugiYamochnyyRemontRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/admin': {
       id: '/admin'
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/404': {
-      id: '/404'
-      path: '/404'
-      fullPath: '/404'
-      preLoaderRoute: typeof R404RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -326,142 +65,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/uslugi/yamochnyy-remont': {
-      id: '/uslugi/yamochnyy-remont'
-      path: '/uslugi/yamochnyy-remont'
-      fullPath: '/uslugi/yamochnyy-remont'
-      preLoaderRoute: typeof UslugiYamochnyyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/uslugi/trotuarnaya-plitka': {
-      id: '/uslugi/trotuarnaya-plitka'
-      path: '/uslugi/trotuarnaya-plitka'
-      fullPath: '/uslugi/trotuarnaya-plitka'
-      preLoaderRoute: typeof UslugiTrotuarnayaPlitkaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/uslugi/asfaltirovaniye-snt': {
-      id: '/uslugi/asfaltirovaniye-snt'
-      path: '/uslugi/asfaltirovaniye-snt'
-      fullPath: '/uslugi/asfaltirovaniye-snt'
-      preLoaderRoute: typeof UslugiAsfaltirovaniyeSntRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/uslugi/asfaltirovaniye-parkovok': {
-      id: '/uslugi/asfaltirovaniye-parkovok'
-      path: '/uslugi/asfaltirovaniye-parkovok'
-      fullPath: '/uslugi/asfaltirovaniye-parkovok'
-      preLoaderRoute: typeof UslugiAsfaltirovaniyeParkovokRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/uslugi/asfaltirovaniye-dvorov': {
-      id: '/uslugi/asfaltirovaniye-dvorov'
-      path: '/uslugi/asfaltirovaniye-dvorov'
-      fullPath: '/uslugi/asfaltirovaniye-dvorov'
-      preLoaderRoute: typeof UslugiAsfaltirovaniyeDvorovRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/uslugi/asfaltirovaniye-dorog': {
-      id: '/uslugi/asfaltirovaniye-dorog'
-      path: '/uslugi/asfaltirovaniye-dorog'
-      fullPath: '/uslugi/asfaltirovaniye-dorog'
-      preLoaderRoute: typeof UslugiAsfaltirovaniyeDorogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/podolsk': {
-      id: '/asfaltirovanie/podolsk'
-      path: '/asfaltirovanie/podolsk'
-      fullPath: '/asfaltirovanie/podolsk'
-      preLoaderRoute: typeof AsfaltirovaniePodolskRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/odintsovo': {
-      id: '/asfaltirovanie/odintsovo'
-      path: '/asfaltirovanie/odintsovo'
-      fullPath: '/asfaltirovanie/odintsovo'
-      preLoaderRoute: typeof AsfaltirovanieOdintsovoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/mytishchi': {
-      id: '/asfaltirovanie/mytishchi'
-      path: '/asfaltirovanie/mytishchi'
-      fullPath: '/asfaltirovanie/mytishchi'
-      preLoaderRoute: typeof AsfaltirovanieMytishchiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/lyubertsy': {
-      id: '/asfaltirovanie/lyubertsy'
-      path: '/asfaltirovanie/lyubertsy'
-      fullPath: '/asfaltirovanie/lyubertsy'
-      preLoaderRoute: typeof AsfaltirovanieLyubertsyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/krasnogorsk': {
-      id: '/asfaltirovanie/krasnogorsk'
-      path: '/asfaltirovanie/krasnogorsk'
-      fullPath: '/asfaltirovanie/krasnogorsk'
-      preLoaderRoute: typeof AsfaltirovanieKrasnogorskRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/korolev': {
-      id: '/asfaltirovanie/korolev'
-      path: '/asfaltirovanie/korolev'
-      fullPath: '/asfaltirovanie/korolev'
-      preLoaderRoute: typeof AsfaltirovanieKorolevRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/istra': {
-      id: '/asfaltirovanie/istra'
-      path: '/asfaltirovanie/istra'
-      fullPath: '/asfaltirovanie/istra'
-      preLoaderRoute: typeof AsfaltirovanieIstraRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/himki': {
-      id: '/asfaltirovanie/himki'
-      path: '/asfaltirovanie/himki'
-      fullPath: '/asfaltirovanie/himki'
-      preLoaderRoute: typeof AsfaltirovanieHimkiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/domodedovo': {
-      id: '/asfaltirovanie/domodedovo'
-      path: '/asfaltirovanie/domodedovo'
-      fullPath: '/asfaltirovanie/domodedovo'
-      preLoaderRoute: typeof AsfaltirovanieDomodedovoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/asfaltirovanie/balashiha': {
-      id: '/asfaltirovanie/balashiha'
-      path: '/asfaltirovanie/balashiha'
-      fullPath: '/asfaltirovanie/balashiha'
-      preLoaderRoute: typeof AsfaltirovanieBalashihaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  R404Route: R404Route,
   AdminRoute: AdminRoute,
-  PrivacyRoute: PrivacyRoute,
-  AsfaltirovanieBalashihaRoute: AsfaltirovanieBalashihaRoute,
-  AsfaltirovanieDomodedovoRoute: AsfaltirovanieDomodedovoRoute,
-  AsfaltirovanieHimkiRoute: AsfaltirovanieHimkiRoute,
-  AsfaltirovanieIstraRoute: AsfaltirovanieIstraRoute,
-  AsfaltirovanieKorolevRoute: AsfaltirovanieKorolevRoute,
-  AsfaltirovanieKrasnogorskRoute: AsfaltirovanieKrasnogorskRoute,
-  AsfaltirovanieLyubertsyRoute: AsfaltirovanieLyubertsyRoute,
-  AsfaltirovanieMytishchiRoute: AsfaltirovanieMytishchiRoute,
-  AsfaltirovanieOdintsovoRoute: AsfaltirovanieOdintsovoRoute,
-  AsfaltirovaniePodolskRoute: AsfaltirovaniePodolskRoute,
-  UslugiAsfaltirovaniyeDorogRoute: UslugiAsfaltirovaniyeDorogRoute,
-  UslugiAsfaltirovaniyeDvorovRoute: UslugiAsfaltirovaniyeDvorovRoute,
-  UslugiAsfaltirovaniyeParkovokRoute: UslugiAsfaltirovaniyeParkovokRoute,
-  UslugiAsfaltirovaniyeSntRoute: UslugiAsfaltirovaniyeSntRoute,
-  UslugiTrotuarnayaPlitkaRoute: UslugiTrotuarnayaPlitkaRoute,
-  UslugiYamochnyyRemontRoute: UslugiYamochnyyRemontRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

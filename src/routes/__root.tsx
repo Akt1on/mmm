@@ -13,9 +13,9 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Страница не найдена</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Страница не существует или была перемещена.
+          The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
           <Link
@@ -38,10 +38,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          Ошибка загрузки страницы
+          This page didn't load
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Что-то пошло не так. Попробуйте обновить страницу или вернитесь на главную.
+          Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button

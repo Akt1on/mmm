@@ -1,5 +1,4 @@
 import { Phone, MessageCircle, MapPin, Clock, Building } from "lucide-react";
-import { LeadForm } from "@/components/site/LeadForm";
 import { useCms } from "@/store/cms";
 import { maxLink, telLink, whatsappLink, telegramLink } from "@/lib/contacts";
 
@@ -192,11 +191,10 @@ export function Contacts() {
             </div>
           </div>
 
-          {/* Right: lead form */}
+          {/* Right: info card */}
           <div className="lg:col-span-6">
-            <LeadForm />
             <div
-              className="mt-6 rounded-[32px] p-8 space-y-6"
+              className="rounded-[32px] p-8 space-y-6"
               style={{
                 background: "rgba(255,255,255,0.06)",
                 border: "1px solid rgba(255,255,255,0.12)",

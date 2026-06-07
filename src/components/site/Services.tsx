@@ -1,23 +1,8 @@
 import { motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
 import * as Icons from "lucide-react";
 import { ArrowUpRight } from "lucide-react";
 import { useCms } from "@/store/cms";
 import { maxLink, telLink } from "@/lib/contacts";
-
-
-const SERVICE_SLUGS: Record<string, string> = {
-  s1: "/uslugi/asfaltirovaniye-dorog",
-  s2: "/uslugi/asfaltirovaniye-dvorov",
-  s3: "/uslugi/asfaltirovaniye-snt",
-  s4: "/uslugi/asfaltirovaniye-parkovok",
-  s5: "/uslugi/asfaltirovaniye-dorog",
-  s6: "/uslugi/trotuarnaya-plitka",
-  s7: "/uslugi/trotuarnaya-plitka",
-  s8: "/uslugi/yamochnyy-remont",
-  s9: "/uslugi/asfaltirovaniye-snt",
-  s10: "/uslugi/asfaltirovaniye-dorog",
-};
 
 export function Services() {
   const services = useCms((s) => s.services);
@@ -42,13 +27,16 @@ export function Services() {
           {services.map((s, i) => {
             const Icon = (Icons as any)[s.icon] ?? Icons.Sparkles;
             return (
-              <motion.div
+              <motion.a
                 key={s.id}
+                href={maxLink(contacts.phone)}
+                target="_blank"
+                rel="noreferrer"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: (i % 5) * 0.05 }}
-                className="group relative rounded-3xl bg-card border border-border p-6 shadow-card hover:shadow-glow-green hover:-translate-y-1 transition-all overflow-hidden overflow-hidden"
+                className="group relative rounded-3xl bg-card border border-border p-6 shadow-card hover:shadow-glow-green hover:-translate-y-1 transition-all overflow-hidden"
               >
                 {s.image && (
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -57,7 +45,6 @@ export function Services() {
                   </div>
                 )}
                 <div className="absolute -top-12 -right-12 size-32 rounded-full bg-gradient-brand-soft opacity-0 blur-2xl group-hover:opacity-30 transition-opacity" />
-                <Link to={(SERVICE_SLUGS[s.id] ?? "/") as any} className="absolute inset-0 z-10" aria-label={s.title} />
                 <div className="relative">
                   <div className="size-12 rounded-2xl bg-gradient-brand-soft grid place-items-center text-white shadow-soft">
                     <Icon className="size-6" />
@@ -70,7 +57,7 @@ export function Services() {
                     </div>
                   )}
                 </div>
-              </motion.div>
+              </motion.a>
             );
           })}
         </div>
